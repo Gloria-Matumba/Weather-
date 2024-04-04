@@ -1,54 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="src/styles.css" />
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/style.css" />
+
     <title>weather</title>
-</head>
-<body> 
+  </head>
+  <body>
     <div class="weather-app">
-    <header>
-      <form>
+      <header>
+        <form id="search-form">
           <input
             type="search"
             placeholder="Enter a city.."
             required
-                 class="search-input"
+            class="search-input"
             id="search-input"
           />
-          
-          <input type="submit" value="Search" class="search-button" />
-        
-        </form>  
-    </header>
-    <main>
-        <div>
-        <h1>
-            pretoria
-        </h1>
-        <p>
-            Thursday 18:50, scattered clouds
-        <br/>
-        Humidity: 65% , Wind:3.13 km/h
 
-        </p>
+          <input type="submit" value="Search" class="search-button" />
+        </form>
+      </header>
+      <main>
+        <div class="current-weather">
+          <div>
+            <h1 class="current-city" id="current-city">Pretoria</h1>
+            <p class="current-details">
+              <span id="current-date"> thursday 18:50 </span>, scattered clouds
+              <br />
+              Humidity: <strong>65%</strong>, Wind: <strong>3.13km/h</strong>
+            </p>
+          </div>
+          <div class="current-temperature">
+            <span class="current-temperature-icon">🌤️ </span
+            ><span class="current-temperature-value" id="current-temperature"
+              >24</span
+            ><span class="current-temperature-unit">°C</span>
+          </div>
         </div>
-        <div>
-            🌤️24
-        </div>
-    </main>
-    <footer>
+      </main>
+      <footer>
         <p>
           This project was coded by
-          <a href="https://github.com/Gloria-Matumba" target="_blank">Gloria Matumba</a> and is
+          <a href="https://github.com/Gloria-Matumba" target="_blank"
+            >Gloria Matumba</a
+          >
+          and is
           <a href="https://github.com/" target="_blank"> on GitHub</a> and
-          <a href="https://app.netlify.com/sites/bucolic-khapse-f33f8f/overview" target="_blank">hosted on Netlify</a>
+          <a
+            href="https://app.netlify.com/sites/bucolic-khapse-f33f8f/overview"
+            target="_blank"
+            >hosted on Netlify</a
+          >
         </p>
       </footer>
     </div>
-   </div> 
   </body>
-</body>
 </html>
