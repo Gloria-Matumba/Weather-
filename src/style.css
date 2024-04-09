@@ -1,10 +1,15 @@
 body {
-  background: #d9cdf7;
+  background: rgb(230, 230, 248);
   font-family: "Roboto", sans-serif;
 }
 
 .weather-app {
-  background: rgb(155, 169, 248);
+  background: linear-gradient(
+    360deg,
+    rgb(155, 169, 248),
+    rgb(247, 152, 247),
+    rgb(163, 163, 250)
+  );
   max-width: 600px;
   margin: 60px auto;
   padding: 30px;
@@ -69,12 +74,14 @@ main {
 .current-temperature-icon {
   position: relative;
   top: -8px;
-  font-size: 40px;
-  margin-right: 10px;
+  font: 30px;
+  margin-right: 50px;
+  margin-left: -80px;
+  margin-bottom: -100px;
 }
 
 .current-temperature-value {
-  font-size: 80px;
+  font-size: 75px;
   font-weight: bold;
 }
 

@@ -1,12 +1,15 @@
 function refreshWeather(response){
+
+
 let temperatureElement = document.querySelector("#temperature");
   let temperature = response.data.temperature.current;
  temperatureElement.innerHTML= Math.round(temperature);
 
-let cityElement= document.querySelector("#city");
- cityElement.innerHTML= response.data.city;
 
- let descriptionElement = document.querySelector("#description");
+let cityElement= document.querySelector("#city");
+cityElement.innerHTML= response.data.city;
+
+let descriptionElement = document.querySelector("#description");
 descriptionElement.innerHTML= response.data.condition.description;
 
 let humidityElement= document.querySelector("#humidity")
@@ -15,17 +18,19 @@ humidityElement.innerHTML=`${response.data.temperature.humidity} %`;
 let windSpeedElement=document.querySelector("#wind-speed");
 windSpeedElement.innerHTML=`${response.data.wind.speed} km/h`;
 
-let timeElement= codument.querySelector("#time");
-timeElement.innerHTML = formatDate(date);
+let iconElement= document.querySelector("#icon");
+iconElement.innerHTML= `<img src="${response.data.condition.icon_url}" class="current-temperature-icon"/>`;
+
+let dayTimeElement= document.querySelector("#day-time");
 let date = new Date(response.data.time * 1000);
-   
+dayTimeElement.innerHTML = formatDate(date);
+
 }
 
 function formatDate(date) {
   let minutes = date.getMinutes();
   let hours = date.getHours();
-
-  let days = [
+let days = [
     "Sunday",
     "Monday",
     "Tuesday",
@@ -34,16 +39,13 @@ function formatDate(date) {
     "Friday",
     "Saturday",
   ];
+
+ let day = days[date.getDay()];
+
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-
-  if (hours < 10) {
-    hours = `0${hours}`;
-  }
-
-  let day = days[date.getDay()];
-  return `${day} ${hours}:${minutes}`;
+ return `${day} ${hours}:${minutes}`;
 }
 
 
@@ -57,10 +59,10 @@ function searchCity(city){
 function handleSearchSubmit(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#search-form-input");
-
 searchCity(searchInput.value);
 }
 
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit",handleSearchSubmit);
- searchCity("pretoria")
+ 
+searchCity("pretoria")
